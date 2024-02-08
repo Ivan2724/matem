@@ -1,0 +1,83 @@
+# 1) Написать класс «Дробь» с (числитель и знаменатель)5МИН
+#
+# 2)Методы класса для ввода данных, вывода данных.10МИН
+#
+# 3)Создать методы класса (сложение, вычитание, умножение, деление).10МИН
+#
+# 4)Создать класс конвертирования температуры.5МИН
+#
+# 5) Создать метод из Цельсия в Фаренгейт.10МИН
+#
+# 6) Создать метод из Фаренгейта в Цельсию.10МИН
+#
+# 7) Создать класс перевода из метрической системы в английскую.15МИН
+#
+# 8) Создать метод (километры и мили, галоны и литры. )10МИН
+#
+# 9) создать метод (мили и километры, литры и галоны)10МИН
+
+class Fraction:
+    def __init__(self,numerator,denominator):
+        self.numerator = numerator
+        self.denominator = denominator
+
+    def get_num(self):
+        return self.numerator
+
+    def get_den(self):
+        return self.denominator
+
+    def set_num(self,num):
+        self.numerator = num
+
+    def set_den(self,den):
+        self.denominator = den
+
+    def display(self):
+        print(f"{self.numerator}/{self.denominator}")
+
+    def sum_fraction(self,fraction):
+        new_num = self.numerator*fraction.denominator + self.denominator*fraction.numerator
+        new_den = self.denominator*fraction.denominator
+        return Fraction(new_num,new_den)
+
+    def sub_fraction(self,fraction):
+        new_num = self.numerator * fraction.denominator - self.denominator * fraction.numerator
+        new_den = self.denominator * fraction.denominator
+        return Fraction(new_num,new_den)
+
+    def mul_fraction(self,fraction):
+        new_num = self.numerator * fraction.numerator
+        new_den = self.denominator * fraction.denominator
+        return Fraction(new_num,new_den)
+
+    def divide_fraction(self,fraction):
+        new_num = self.numerator * fraction.denominator
+        new_den = self.denominator * fraction.numerator
+        return Fraction(new_num,new_den)
+
+class Translation:
+
+    def celsius_fahrenheit(self,celsius):
+        return celsius * 1,8 + 32
+
+    def fahrenheit_celsius(self,fahrenheit):
+        return (fahrenheit - 32) / 1,8
+
+class Translation2:
+
+    def km_mil(self,km):
+        return km * 0.6021371
+
+    def mil_km(self,mil):
+        return mil * 1.60934
+
+    def halon_liter(self,halon):
+        return halon * 3,78541
+
+    def liter_halon(self,liter):
+        return liter * 0,264172
+
+
+
+
